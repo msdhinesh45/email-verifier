@@ -1,5 +1,5 @@
 // App.js
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./pages/Header";
 import Footer from "./pages/Footer";

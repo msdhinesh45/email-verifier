@@ -6,9 +6,7 @@ import logo from "../assets/imgaes/tneb.png";
 const LoginForm = ({ onLogin }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const toggleForm = () => {
-    setIsActive(!isActive);
-  };
+  // toggleForm was defined but never used; removed to satisfy ESLint no-unused-vars.
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,7 +14,12 @@ const LoginForm = ({ onLogin }) => {
     const password = e.target.querySelector('input[type="password"]').value;
 
     // Check default credentials
-    if (email === 'flareminds@gmail.com' && password === 'flareminds@123'||email === 'flaremindstech@gmail.com' && password === 'flaremindstech@123'||email === 'admin@gmail.com' && password === 'admin@123' )  {
+    // Parenthesize mixed &&/|| expressions to avoid no-mixed-operators ESLint errors
+    if (
+      (email === 'flareminds@gmail.com' && password === 'flareminds@123') ||
+      (email === 'flaremindstech@gmail.com' && password === 'flaremindstech@123') ||
+      (email === 'admin@gmail.com' && password === 'admin@123')
+    ) {
       // Store authentication data in localStorage
       localStorage.setItem('isAuthenticated', 'true');
       localStorage.setItem('userEmail', email);

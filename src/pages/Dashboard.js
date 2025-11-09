@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../assets/styles/components/Dashboard.css";
 import * as XLSX from "xlsx";
 import ResultTable from "./ResultTable";
-import { emailPost, emailGetAll,emaildeleteAll } from "../api";
+import { emailPost, emailGetAll } from "../api";
 import { ToastContainer, toast } from "react-toastify";
 // import { ThemeContext } from "../App";
 import "react-toastify/dist/ReactToastify.css";
