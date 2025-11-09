@@ -1,0 +1,176 @@
+/* Header.css */
+.header-card {
+  background-color: #ffffff; /* white header like screenshot */
+  width: 100%;
+  border-radius: 0; /* full width header, no rounded corners */
+  padding: 3px 0; /* vertical padding, inner content centered by .header-content */
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: fixed; /* fix header to top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-text {
+  flex: 1;
+  text-align: left;
+}
+
+.header-text h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #2380d9; /* blue title matching screenshot */
+  margin-bottom: 6px;
+}
+
+.header-text p {
+  font-size: 1rem;
+  color: #6b7280; /* muted gray */
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+/* theme toggle removed in new design */
+
+.theme-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.theme-toggle-btn:hover::before {
+  left: 100%;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-3px) rotate(12deg);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* Enhanced Logout Button */
+.logout-btn {
+  background: linear-gradient(
+    135deg,
+    var(--btn-gradient-start) 0%,
+    var(--btn-gradient-end) 100%
+  );
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.logout-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.logout-btn:hover::before {
+  left: 100%;
+}
+
+.logout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* Logout button alternative style for light theme */
+:root[data-theme="light"] .logout-btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+  
+  .header-text {
+    text-align: center;
+  }
+  
+  .header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header p {
+    font-size: 1.1rem;
+  }
+  
+  .header-actions {
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .header-card {
+    padding: 12px 10px;
+  }
+  
+  .header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .header p {
+    font-size: 1rem;
+  }
+  
+  .logout-btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* small logo sizing */
+.header-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+}
+
+.header-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}

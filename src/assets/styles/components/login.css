@@ -1,0 +1,291 @@
+/* assets/styles/components/login.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  width: 800px;
+  max-width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.form-container {
+  width: 50%;
+  padding: 40px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo Styles */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-logo {
+  max-width: 120px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.side-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.logo-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  transition: border 0.3s ease;
+}
+
+.form-container input:focus {
+  border: 2px solid #764ba2;
+  outline: none;
+}
+
+.form-container button.submit-btn {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-container button.submit-btn:hover {
+  background: linear-gradient(to left, #667eea, #764ba2);
+}
+
+.toggle-container {
+  width: 50%;
+  background: linear-gradient(to bottom right, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  margin: unset;
+}
+
+.toggle-container h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.toggle-container p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.toggle-container button.switch-btn {
+  padding: 8px 25px;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 5px;
+}
+
+.toggle-container button.switch-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide one form by default */
+.form-container.signin {
+  display: none;
+}
+
+.wrapper.active .form-container.login {
+  display: none;
+}
+
+.wrapper.active .form-container.signin {
+  display: block;
+}
+
+/* Forgot password & terms */
+.forgot-password {
+  color: #764ba2;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  align-self: flex-start;
+  text-decoration: underline;
+}
+
+.accept-terms {
+  margin: 10px 0 0 0;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.accept-terms input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Social buttons container */
+.social-login {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.social-btn svg {
+  width: 24px;
+  height: 24px;
+  transition: fill 0.3s ease;
+}
+
+/* Google */
+.social-btn.google svg {
+  fill: #db4437;
+}
+.social-btn.google:hover {
+  background-color: #db4437;
+}
+.social-btn.google:hover svg {
+  fill: white;
+}
+
+/* Facebook */
+.social-btn.facebook svg {
+  fill: #1877f2;
+}
+.social-btn.facebook:hover {
+  background-color: #1877f2;
+}
+.social-btn.facebook:hover svg {
+  fill: white;
+}
+
+/* GitHub */
+.social-btn.github svg {
+  fill: #333;
+}
+.social-btn.github:hover {
+  background-color: #333;
+}
+.social-btn.github:hover svg {
+  fill: white;
+}
+
+/* X */
+.social-btn.x svg {
+  fill: #000000;
+}
+.social-btn.x:hover {
+  background-color: #000000;
+}
+.social-btn.x:hover svg {
+  fill: white;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    width: 293px;
+  }
+
+  .form-container,
+  .toggle-container {
+    width: 100%;
+  }
+
+  .toggle-container {
+    padding: 20px;
+  }
+
+  .login-logo,
+  .side-logo {
+    max-width: 100px;
+  }
+}
+
+/* Theme support */
+.wrapper.dark {
+  background: #2d3748;
+}
+
+.wrapper.dark .form-container {
+  background: #2d3748;
+  color: white;
+}
+
+.wrapper.dark .form-container h2 {
+  color: white;
+}
+
+.wrapper.dark .form-container input {
+  background: #4a5568;
+  color: white;
+  border-color: #718096;
+}
+
+.wrapper.dark .form-container input:focus {
+  border-color: #764ba2;
+}
