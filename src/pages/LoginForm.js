@@ -4,7 +4,8 @@ import '../assets/styles/components/login.css';
 import logo from "../assets/imgaes/tneb.png";
 
 const LoginForm = ({ onLogin }) => {
-  const [isActive, setIsActive] = useState(false);
+  // We only need the current state value here; the setter was unused and triggered ESLint.
+  const [isActive] = useState(false);
 
   // toggleForm was defined but never used; removed to satisfy ESLint no-unused-vars.
 
